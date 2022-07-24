@@ -63,6 +63,21 @@ Open the whole package folder with a good code editor, preferably [Visual Studio
 - In the VS Code top menu: **Terminal** -> **New Terminal**
 - The VS Code shortcut to format a code file is <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>F</kbd> on windows.
 
+# Usage
+
+To use the npm package you've created within an application, you'll need to authenticate to GitHub Packages and configure npm to pull scoped packages from the proper registry:
+
+1. Create a GitHub Personal Access Token (PAT) as described [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) with the `read:packages` permission.
+
+2. Create add a `.npmrc` file in the same or parent folder as your application's `package.json` file as follows, assuming a repo of `SampleCompany/SampleProject`:
+
+```
+@samplecompany:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken="MYAUTHTOKEN"
+```
+
+Then you can add this package to your application simply by using `npm install`. Please consider security implications when committing a `.npmrc` file containing your PAT to a repository.
+
 # More notes
 
 See https://github.com/tomchen/example-typescript-package for more information about the basis of this template.
