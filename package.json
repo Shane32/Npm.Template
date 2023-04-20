@@ -50,11 +50,10 @@
   "bugs": {
     "url": "https://github.com/dummy/dummy/issues"
   },
-  "dependencies": {
-    "react": ">=16 <=17",
-    "react-dom": ">=16 <=17"
+  "peerDependencies": {
+    "react": ">=16",
+    "react-dom": ">=16"
   },
-  "peerDependencies": {},
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
