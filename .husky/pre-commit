@@ -3,4 +3,4 @@
 . "$(dirname "$0")/common.sh"
 
 npm.cmd run test
-npx.cmd pretty-quick --staged
+npm.cmd run prettier
