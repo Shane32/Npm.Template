@@ -1,5 +1,4 @@
 import React from "react";
-//import { render, unmountComponentAtNode } from "react-dom";
 import { render, screen } from "@testing-library/react";
 import { act } from "react-dom/test-utils";
 import pretty from "pretty";
