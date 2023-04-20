@@ -1,5 +1,5 @@
-import { Num } from './Num';
-import Card from './Card';
-import Bridge from './Bridge';
+import { Num } from "./Num";
+import Card from "./Card";
+import Bridge from "./Bridge";
 
-export { Num, Card, Bridge }
+export { Num, Card, Bridge };
