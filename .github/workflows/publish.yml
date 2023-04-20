@@ -23,6 +23,8 @@ jobs:
           ref="${github_ref:10}"
           echo $ref
           echo "ref=$ref" >> $GITHUB_ENV
+      - name: Install npm@9
+        run: npm i -g npm@9
       - name: Setup .npmrc file to publish to npm
         uses: actions/setup-node@v1
         with:
