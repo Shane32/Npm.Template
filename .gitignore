@@ -119,3 +119,4 @@ dist
 # Visual Studio
 .vs
 *.user
+obj/**
