@@ -38,7 +38,7 @@ To publish a package, issue a release on GitHub with a tag number that correspon
 
 The repository is configured as follows:
 
-- Husky is used to lint commit messages via commitlint, but currently disabled (see `.husky/commit-msg`).
+- Husky with prettier is used to reformat scripts before a commit; see `.husky/pre-commit` to disable.
 - Husky is used to enforce passing of tests before a commit; see `.husky/pre-commit` to disable.
 - Packages build for cjs, esm, and umd -- CommonJS, ES Modules, and Universal Module Definition formats.  Typescript definitions are also included.
   - The umd module is webpacked, so it is minified and images may be inlined, etc. See `config/webpack.config.js`.
@@ -48,11 +48,11 @@ The repository is configured as follows:
   - `packagejson` can rewrite the `package.json` file with a changed setting; currently unused
   - `updateurl` changes the `package.json` file as necessary based on the active repository name and specified version number; used when publishing
 - There are GitHub CI scripts in `.github/workflows`:
-  - `test.yml` executes `npm run test` and can be configured to run on different OSes or with different versions of Node. Currently set to Ubuntu and Node 14.
+  - `test.yml` executes `npm run test` and can be configured to run on different OSes or with different versions of Node. Currently set to Ubuntu and Node 14/16/18.
+  - `build.yml` updates the package name and version via the `updateurl` tool, and then builds and publishes the package to GitHub Package Repository as a beta build.
   - `publish.yml` updates the package name and version via the `updateurl` tool, and then builds and publishes the package to GitHub Package Repository.
-- `.editorconfig`, `.eslintrc.js` and `.prettierrc.js` are used to configure editor options.
+- `.editorconfig`, `.eslintrc` are used to configure editor options.
 - Jest is used for tests; see `jest.config.js` and `config/fileTransformer.js`.
-- [pinst](https://github.com/typicode/pinst) is used to solve [a problem of husky](https://typicode.github.io/husky/#/?id=yarn-2)
 
 # Required tools and environment
 
