@@ -78,18 +78,18 @@ it("should match snapshots", () => {
   let { container } = render(<Card card="2c" />);
 
   expect(pretty(container.innerHTML)).toMatchInlineSnapshot(
-    `"<img src=\\"2C.svg\\" class=\\" playingcard playingcard_front\\" alt=\\"2c\\">"`,
+    `"<img src="2C.svg" class=" playingcard playingcard_front" alt="2c">"`
   ); /* ... gets filled automatically by jest ... */
 
   container = render(<Card back />).container;
 
   expect(pretty(container.innerHTML)).toMatchInlineSnapshot(
-    `"<img src=\\"back.svg\\" class=\\" playingcard playingcard_back\\" alt=\\"back\\">"`,
+    `"<img src="back.svg" class=" playingcard playingcard_back" alt="back">"`
   ); /* ... gets filled automatically by jest ... */
 
   container = render(<Card back height={20} />).container;
 
   expect(pretty(container.innerHTML)).toMatchInlineSnapshot(
-    `"<img src=\\"back.svg\\" class=\\" playingcard playingcard_back\\" style=\\"height: 20px;\\" alt=\\"back\\">"`,
+    `"<img src="back.svg" class=" playingcard playingcard_back" style="height: 20px;" alt="back">"`
   ); /* ... gets filled automatically by jest ... */
 });
