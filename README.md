@@ -49,7 +49,7 @@ The repository is configured as follows:
   - `updateurl` changes the `package.json` file as necessary based on the active repository name and specified version number; used when publishing
   - `prepare-publish` deletes all of the keys from the `package.json` file that should not be included in the published file, such as `scripts`
 - There are GitHub CI scripts in `.github/workflows`:
-  - `test.yml` executes `npm run test` and can be configured to run on different OSes or with different versions of Node. Currently set to Ubuntu and Node 14/16/18.
+  - `test.yml` executes `npm run test` and can be configured to run on different OSes or with different versions of Node. Currently set to Ubuntu and Node 18/20/22.
   - `build.yml` updates the package name and version via the `updateurl` tool, and then builds and publishes the package to GitHub Package Repository as a beta build.
   - `publish.yml` updates the package name and version via the `updateurl` tool, and then builds and publishes the package to GitHub Package Repository.
 - `.editorconfig`, `.eslintrc` are used to configure editor options.
